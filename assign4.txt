@@ -1,0 +1,48 @@
+Assign 4: Due 11:59PM April 26th
+
+You're asked to create a GUI application that will help design a bicycle 
+wheel. Your application will allow the user to start with a preset wheel,
+of some size, with a select number of spokes. The user can add and remove 
+spokes and change various properties. There are some restrictions:
+
+1. At least eight spokes are required.
+2. Spokes have to be spread out evenly.
+3. If the hub size is changed, the spokes size changes accordingly.
+4. If the wheel size is changed, the spokes size changes accordingly.
+5. Diameter of the hub can't be bigger than one forth the wheel's diameter.
+
+The program will save the design in a file and can reopen it at a later time.
+
+After you complete the code, answer the following questions:
+
+What design principles did you use in the program?
+
+We use SRP - one method only does one thing. 
+For example, in our GUI class, each Create method only creates one component for our menu, and then by calling all the create methods; we can make a full menu. 
+DRY is also a principle that we use to prevent repeated code. 
+YAGNI also appeared during our implementation process, we eliminated the method to get the spoke's size since we don't need for the current implementation.
+These help the class easy to extend, and closed for modification, therefore obeys OCP. 
+
+What design patterns did you use in the program?
+
+Mediator Pattern: the wheel and the hub don't communicate directly to each other. They depend on the mediator (the interface, in this case) who controls and updates the condition of both of them. (We don't care about the spoke's length in this case) 
+This helps to reduce the interdependency between the hub and the wheel, and make the conditions for both of them reflected correctly at run-time --> decoupling. 
+Our GUI reflects this pattern. 
+
+Observer Pattern: those Updates methods are the observers who listen to the scales, who inform the program that the size of either hub, wheel, or number of spokes have changed. 
+ 
+
+Total [100]: 95
+
+Build pass with no errors [20]:
+
+Test quality [20]: 
+
+Coverage [10]:
+
+Code quality [10]:
+
+Design quality [20]: 
+
+Principles and Patterns [20]: -5
+Unnecessary discussions about patterns that are really not used but were potential candidates.
